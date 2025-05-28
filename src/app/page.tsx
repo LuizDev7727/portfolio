@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Github, Linkedin, Mail, ExternalLink, Download, MapPin, ArrowRight } from "lucide-react"
 import { projects } from "@/constants/projects"
 import SendContactForm from "./send-contact-form"
+import Link from "next/link"
 
 export default function Home() {
   const skillCategories = [
@@ -55,31 +56,16 @@ export default function Home() {
               </p>
 
               <p className="text-zinc-400 mb-8 leading-relaxed max-w-2xl">
-                Com mais de 5 anos de experiência, transformo ideias em produtos digitais que impactam milhares de
-                usuários. Especialista em React, Node.js e arquiteturas cloud-native.
+                Desenvolvedor júnior com experiência em projetos web, focado em transformar ideias em soluções digitais. Tenho trabalhado com React e Node.js, e venho me aprofundando em boas práticas de desenvolvimento e arquiteturas cloud-native.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button className="bg-lime-400 text-zinc-950 hover:bg-lime-500 font-semibold">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Entre em Contato
-                </Button>
-                <Button variant="outline" className="border-zinc-800 text-zinc-300 hover:bg-zinc-900">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download CV
-                </Button>
-              </div>
-
               <div className="flex gap-4 justify-center lg:justify-start mt-8">
-                <Button size="icon" variant="ghost" className="text-zinc-500 hover:text-lime-400">
+                <Link href={'https://github.com/luizdev7727'} rel="noopener noreferrer" className="text-zinc-500 hover:text-lime-400">
                   <Github className="w-5 h-5" />
-                </Button>
-                <Button size="icon" variant="ghost" className="text-zinc-500 hover:text-lime-400">
+                </Link>
+                <Link href={'https://www.linkedin.com/in/luizantonio2003/'} rel="noopener noreferrer" className="text-zinc-500 hover:text-lime-400">
                   <Linkedin className="w-5 h-5" />
-                </Button>
-                <Button size="icon" variant="ghost" className="text-zinc-500 hover:text-lime-400">
-                  <Mail className="w-5 h-5" />
-                </Button>
+                </Link>
               </div>
             </div>
 
@@ -167,13 +153,11 @@ export default function Home() {
                   </div>
 
                   <div className="flex gap-3">
-                    <Button size="sm" variant="outline" className="border-zinc-700 text-zinc-300 hover:bg-zinc-800">
-                      <Github className="w-4 h-4 mr-2" />
-                      Código
-                    </Button>
-                    <Button size="sm" className="bg-lime-400 text-zinc-950 hover:bg-lime-500">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Demo
+                    <Button size="sm" className="bg-lime-400 text-zinc-950 hover:bg-lime-500" asChild>
+                      <Link href={project.url} rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Demo
+                      </Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -181,12 +165,6 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Button variant="outline" className="border-zinc-800 text-zinc-300 hover:bg-zinc-900">
-              Ver Todos os Projetos
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </div>
         </div>
       </section>
 
